@@ -319,6 +319,7 @@ footer nav ul {
 }
 
 /* Page de login */
+
 #login-form h1 {
 	text-align: center;
 	font-size: 30px;
@@ -410,3 +411,4 @@ footer nav ul {
 	width: 380px;
 	padding: 20px 20px;
 }
+
