@@ -30,6 +30,34 @@ export function genereProjets(projets) {
 
 // Generation des projet
 const projets = await getProjets();
-console.log(projets);
+document.querySelector(".gallery").innerHTML = "";
 genereProjets(projets);
 
+// GESTION DES BOUTONS FILTRE
+// Tous
+document.querySelector(".f-1").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(".gallery").innerHTML = "";
+    genereProjets(projets);
+});
+// Objets
+document.querySelector(".f-2").addEventListener("click", function(e) {
+    e.preventDefault();
+    const projetsFiltres = projets.filter(projet => projet.categoryId === 1);
+    document.querySelector(".gallery").innerHTML = "";
+    genereProjets(projetsFiltres);
+});
+// Appartements
+document.querySelector(".f-3").addEventListener("click", function(e) {
+    e.preventDefault();
+    const projetsFiltres = projets.filter(projet => projet.categoryId === 2);
+    document.querySelector(".gallery").innerHTML = "";
+    genereProjets(projetsFiltres);
+});
+// Hôtels et Restaurants
+document.querySelector(".f-4").addEventListener("click", function(e) {
+    e.preventDefault();
+    const projetsFiltres = projets.filter(projet => projet.categoryId === 3);
+    document.querySelector(".gallery").innerHTML = "";
+    genereProjets(projetsFiltres);
+});
